@@ -12,7 +12,6 @@ ament_auto_find_build_dependencies()
 ament_auto_add_library(sample_lib
     src/sample_lib.cpp
     include/sample_package/sample_lib.hpp
-    include/sample_package/visibility_control.h
 )
 
 ament_auto_add_executable(sample_node
@@ -30,7 +29,12 @@ if(BUILD_TESTING)
     set(ament_cmake_cpplint_FOUND TRUE)
     # the following line skips the linter which checks for cmake files
     set(ament_cmake_lint_cmake_FOUND TRUE)
+    set(ament_cmake_uncrustify_FOUND TRUE)
     ament_lint_auto_find_test_dependencies()
+    ament_auto_find_test_dependencies()
+    ament_auto_add_gtest(sample_lib_test
+        test/sample_lib_test.cpp
+    )
 endif()
 
 ament_auto_package()
