@@ -1,8 +1,6 @@
 #ifndef SAMPLE_PACKAGE__SAMPLE_LIB_HPP_
 #define SAMPLE_PACKAGE__SAMPLE_LIB_HPP_
 
-#include "sample_package/visibility_control.h"
-
 namespace sample_package
 {
 
@@ -11,7 +9,11 @@ class SampleLib
 public:
   SampleLib();
 
-  virtual ~SampleLib();
+  auto add(int a, int b) -> int;
+  auto subtract(int a, int b) -> int;
+  auto multiply(int a, int b) -> int;
+
+  ~SampleLib();
 };
 
 }  // namespace sample_package
