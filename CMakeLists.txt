@@ -31,7 +31,6 @@ if(BUILD_TESTING)
     set(ament_cmake_lint_cmake_FOUND TRUE)
     set(ament_cmake_uncrustify_FOUND TRUE)
     ament_lint_auto_find_test_dependencies()
-    ament_auto_find_test_dependencies()
     ament_auto_add_gtest(sample_lib_test
         test/sample_lib_test.cpp
     )
